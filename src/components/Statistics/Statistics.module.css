@@ -1,0 +1,8 @@
+.feedback_list {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+.feedback {
+  margin: 20px;
+}
