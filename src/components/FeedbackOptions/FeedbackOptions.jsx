@@ -6,17 +6,23 @@ export class FeedbackOptions extends Component {
     return (
       <ul className={css.feedback_list}>
         <li className={css.feedback_list}>
-          <button type="button" onClick={() => this.changeFeedback('good')}>
+          <button
+            type="button"
+            onClick={() => this.props.onClickButton('good')}
+          >
             Good
           </button>
         </li>
         <li className={css.feedback_list}>
-          <button type="button" onClick={() => this.changeFeedback('neutral')}>
+          <button
+            type="button"
+            onClick={() => this.props.onClickButton('neutral')}
+          >
             Neutral
           </button>
         </li>
         <li className={css.feedback_list}>
-          <button type="button" onClick={() => this.changeFeedback('bad')}>
+          <button type="button" onClick={() => this.props.onClickButton('bad')}>
             Bad
           </button>
         </li>
