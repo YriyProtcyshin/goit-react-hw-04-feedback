@@ -1,6 +1,8 @@
 import { Component } from "react";
 import css from './Feedback.module.css'
 
+
+// comment
 export class Feedback extends Component {
     state = {
         good: 0,
