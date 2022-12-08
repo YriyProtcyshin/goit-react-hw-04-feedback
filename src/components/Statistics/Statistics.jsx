@@ -4,8 +4,7 @@ import { Component } from 'react';
 export class Statistics extends Component {
   render() {
     return (
-      <>
-        <h2>Statistics</h2>
+      <>        
         <p>Good: {this.props.good}</p>
         <p>Neutral: {this.props.neutral}</p>
         <p>Bad: {this.props.bad}</p>
