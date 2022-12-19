@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Section } from './Section/Section';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
@@ -11,7 +11,22 @@ export function App() {
 
   const feedbackScores = { good, neutral, bad };
 
-  const changeValue = name => {};
+  const changeValue = name => {
+    console.log(name);
+    switch (name) {
+      case 'good':
+        setGood(state => state + 1);
+        break;
+      case 'neutral':
+        setNeutral(state => state + 1);
+        break;
+      case 'bad':
+        setBad(state => state + 1);
+        break;
+      default:
+        return;
+    }
+  };
 
   const countTotalFeedback = () => {
     return good + neutral + bad;
@@ -31,12 +46,12 @@ export function App() {
         <FeedbackOptions onClickButton={changeValue} states={feedbackScores} />
       </Section>
       <Section title="Statistics">
-        {countTotalFeedback > 0 ? (
+        {countTotalFeedback() > 0 ? (
           <Statistics
             good={good}
             neutral={neutral}
             bad={bad}
-            total={countTotalFeedback}
+            total={countTotalFeedback()}
             positivePercentage={countPositiveFeedbackPercentage()}
           />
         ) : (
